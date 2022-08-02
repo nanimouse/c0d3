@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+    <head></head>
+    <body>
+
+        <input class="input1"/>
+        <input class="input2"/>
+        <button> click </button>
+
+        <script>
+
+            const input1 = document.querySelector(".input1");
+            const input2 = document.querySelector(".input2");
+            const click = document.querySelector("button");
+
+            click.onclick = () => {
+                let num1 = +input1.value;
+                let num2 = +input2.value;
+
+                alert(num1+num2 > 10);
+            }
+
+        </script>
+    </body>
+</html>

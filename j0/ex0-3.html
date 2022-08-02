@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+    <head></head>
+    <body>
+
+        <input class="inputNum"/>
+        <button> click </button>
+
+        <script>
+            const inputNum = document.querySelector(".inputNum");
+            const click = document.querySelector("button");
+
+            click.onclick = () => {
+                let inputVal = +inputNum.value;
+                if(inputVal > 5){
+                    alert("Big!");
+                }
+            }
+
+        </script>
+    </body>
+</html>

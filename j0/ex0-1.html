@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+    <head>
+    </head>
+
+    <body>
+
+        <input type="text" id="input"/>
+        <button id="click"> click me </button>
+
+
+        <script>
+            const button = document.querySelector("#click");
+            let input = document.querySelector("#input");
+
+
+            button.onclick = () => {
+                const inputVal = input.value; // .value returns or inputs a value
+                if(inputVal%2 === 0){
+                  input.value = 0;
+                }
+            }
+        </script>
+    </body>
+</html>

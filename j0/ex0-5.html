@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+  <head></head>
+  <body>
+
+    <input class="input1">
+    <button class="generateButton"> Generate </button>
+
+    <br>
+
+    <input class="input2">
+    <button class="submitButton"> Submit </button>
+
+
+
+    <script>
+
+        let input1 = document.querySelector(".input1");
+        let input2 = document.querySelector(".input2");
+        let generateButton = document.querySelector(".generateButton");
+        let submitButton = document.querySelector(".submitButton");
+        let runFun;
+
+        const solution = (num1, num2) => {
+            return () => {
+                return num1 + num2;
+            }
+        }
+
+
+
+        generateButton.onclick = () => {
+            let inputVal = +input1.value;
+            let inputVal2 = +input2.value;
+
+            runFun = solution(inputVal, inputVal2);
+
+            //since runFun is global and unassigned, we use it to store the solution func with its arguments. runFun is now
+            //runFun = return inputVal+inputVal2;
+
+
+
+        }
+
+
+        submitButton.onclick = () => {
+
+            alert(runFun());
+
+            //takes on the "new" runFun and runs it
+        }
+
+
+
+    </script>
+  </body>
+</html>

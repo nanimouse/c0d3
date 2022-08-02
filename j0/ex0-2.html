@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+    <head>
+    </head>
+
+    <body>
+
+        <input class="num1">
+        <input class="num2">
+        <button> click </button>
+
+        <script>
+
+            let input1 = document.querySelector(".num1");
+            let input2 = document.querySelector(".num2");
+            const click = document.querySelector("button");
+
+            click.onclick = () => {
+                let valOne = +input1.value;
+                let valTwo = +input2.value;
+                let sum = valOne + valTwo;
+                alert(sum);
+            }
+        </script>
+
+
+    </body>
+
+</html>

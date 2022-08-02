@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+  <head></head>
+  <body>
+    <input class="input1" />
+    <input class="input2" />
+    <button class="generateButton">Generate</button>
+
+    <br />
+    <input class="input3" />
+    <button class="submitButton">Submit</button>
+
+    <script>
+      const num1 = document.querySelector(".input1");
+      const num2 = document.querySelector(".input2");
+      const num3 = document.querySelector(".input3");
+      const generate = document.querySelector(".generateButton");
+      const submit = document.querySelector(".submitButton");
+      let runMe;
+
+      const solution = (num1, num2) => {
+        return (a) => {
+          return num1 + num2 + a;
+        };
+      };
+
+
+      generate.onclick = () => {
+          let inputVal = +num1.value;
+          let inputVal2 = +num2.value;
+
+
+          runMe = solution(inputVal, inputVal2);
+
+          //we use global runMe to store the solution function.
+          // runMe = (a) => { return inputVal + inputVal2 + a }
+
+      };
+
+      submit.onclick = () => {
+          let inputVal3 = +num3.value;
+          alert(runMe(inputVal3));
+
+          //now we can include our last argument
+          // runMe(inputVal3) = return inputVal1 + inputVal2 + inputVal3;
+      }
+
+
+    </script>
+  </body>
+</html>
