@@ -1,0 +1,15 @@
+<!-- 3. Build a closure UI. BTW, UI means User Interface which is the means that the user and a computer system interacts, like the use of input box or buttons. (There are many ways to do this. The provided solution is not the only solution.) I will start with an input box and a submit button. When the button is clicked with text, "Hello *text* will display"  i need to work on this!!!!-->
+<script>
+  const body = document.querySelector("body");
+  body.innerHTML = ` <input type="text"/> <button class="submit">Submit</button>`;
+
+  const submitButton = document.querySelector(".submit");
+  submitButton.onclick = () => {
+    return () => {
+      body.innerHTML = ` <h1 class="heading"> test </h1>
+                <input type="text"/> <button class="submit">Submit</button>`;
+    };
+  };
+
+  const input = document.querySelector(".input");
+</script>

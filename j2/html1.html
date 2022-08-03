@@ -1,0 +1,18 @@
+<!-- 1. Create an h1 element that saysChange Me, an input box, and a submit button. When the submit button is clicked, the h1 element is changed to whatever is inside the input box. -->
+<h1>Change Me</h1>
+<input type="text" /> <br />
+<button>Submit</button>
+<script>
+  const input = document.querySelector("input");
+  const button = document.querySelector("button");
+  const heading = document.querySelector("h1");
+
+  const changeHeading = () => {
+    heading.innerText = `${input.value}`;
+  };
+
+  button.onclick = () => {
+    let res = changeHeading();
+    return res;
+  };
+</script>

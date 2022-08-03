@@ -1,0 +1,33 @@
+<!-- 6. House Of Primes. Create an input box, a button, and h1 element. When the user types in a number and hits start button, all the prime numbers from 2 to the input number will be displayed. -->
+<!-- collectPrimes() will take a number and an i to use for a counter. while i is less than or equal to num, isPrime() will check if each number from i-num is prime or not. if true is returned, we will add the number to the h1. -->
+
+<input type="number" />
+<button class="primer">Show the Primes</button>
+<div class="container"></div>
+<script>
+  const numInput = document.querySelector("input");
+  const button = document.querySelector(".primer");
+  const container = document.querySelector(".container");
+
+  const isPrime = (num, i = 2) => {
+    if (num > i && num !== 3) {
+      i++;
+      if (num % i === 0) return;
+    }
+    if (num <= 1 || (num % 2 === 0 && num !== 2)) return;
+    return true;
+  };
+
+  const collectPrimes = (num, i = 0, res = "") => {
+    if (i > num) return res;
+    if (isPrime(i)) {
+      res += `<h1>${i}</h1>`;
+    }
+    return collectPrimes(num, i + 1, res);
+  };
+
+  button.onclick = () => {
+    const res = collectPrimes(+numInput.value);
+    container.innerHTML = res;
+  };
+</script>

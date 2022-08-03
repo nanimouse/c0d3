@@ -1,0 +1,20 @@
+<!-- 4. Hello String Generator UI. Create a page with an input box and a button. The input box takes a number, and when the button is clicked, Hello repeated that many times is displayed inside an <h1> element. -->
+<input type="number" />
+<button class="submit">submit</button>
+<h1 class="heading"></h1>
+<script>
+  const input = document.querySelector("input");
+  const button = document.querySelector(".submit");
+  const heading = document.querySelector(".heading");
+
+  const multiHead = (num, res = "") => {
+    if (num <= 0) return res;
+    res += "Hello";
+    return multiHead(num - 1, res);
+  };
+
+  button.onclick = () => {
+    const res = multiHead(+input.value);
+    heading.innerText = res;
+  };
+</script>

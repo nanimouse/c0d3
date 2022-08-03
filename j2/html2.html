@@ -1,0 +1,25 @@
+<!-- 2. Start with a button called Start. When you click on the button the page changes to show an input box and a button (Cancel). When the Cancel button is clicked, the page goes back to its original state. -->
+<script>
+  const body = document.querySelector("body");
+
+  const changePageAndBack = () => {
+    body.innerHTML = `
+                <button class="startButton">Start</button>
+            `;
+    const startButton = document.querySelector(".startButton");
+
+    startButton.onclick = () => {
+      body.innerHTML = `
+                    <input/>
+                    <button class="cancelButton">Cancel</button
+                `;
+      const cancelButton = document.querySelector(".cancelButton");
+
+      cancelButton.onclick = () => {
+        changePageAndBack();
+      };
+    };
+  };
+
+  changePageAndBack();
+</script>

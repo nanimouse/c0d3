@@ -1,0 +1,21 @@
+<!-- 5. String Breaker. Split the input string into single characters and add the individual characters into their own <h1> element. -->
+<input type="text" />
+<button class="breaker">Break the String</button>
+<div class="container"></div>
+
+<script>
+  const stringInput = document.querySelector("input");
+  const button = document.querySelector(".breaker");
+  const container = document.querySelector(".container");
+
+  const breakStr = (str, i = 0, res = "") => {
+    //breakStr() takes a string, uses i to keep our place in the string. when i = counter, return. otherwise, return each letter individually
+    if (i > str.length - 1) return res;
+    return breakStr(str, i + 1, res + `<h1>${str[i]}</h1>`);
+  };
+
+  button.onclick = () => {
+    const res = breakStr(stringInput.value);
+    container.innerHTML = res;
+  };
+</script>
